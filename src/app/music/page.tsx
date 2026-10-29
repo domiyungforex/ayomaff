@@ -32,7 +32,7 @@ export default function MusicPage() {
           ALL RELEASES
         </h1>
         <p className="text-sm text-zinc-400">
-          Explore albums, EPs, and breakout singles from Ayo Maff — streaming across all official global platforms.
+          Explore albums, EPs, and breakout singles from Ayo Maff, streaming across all official global platforms.
         </p>
       </div>
 

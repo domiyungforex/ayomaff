@@ -22,7 +22,7 @@ export default function AboutPage() {
           <span className="text-electric-green text-glow">THE WORLD</span>
         </h1>
         <p className="text-base sm:text-lg text-zinc-300 leading-relaxed font-sans">
-          The sound, struggle, and poetic resilience of Ayorinde Mafoluku Ayodele — known universally to millions as Ayo Maff.
+          The sound, struggle, and poetic resilience of Ayorinde Mafoluku Ayodele, known universally to millions as Ayo Maff.
         </p>
       </div>
 
@@ -66,7 +66,7 @@ export default function AboutPage() {
           {ARTIST_INFO.verifiedQuotes[0].quote}
         </blockquote>
         <cite className="text-xs font-mono font-medium text-electric-green uppercase tracking-widest block">
-          — {ARTIST_INFO.name}, {ARTIST_INFO.verifiedQuotes[0].source}
+          • {ARTIST_INFO.name}, {ARTIST_INFO.verifiedQuotes[0].source}
         </cite>
       </div>
 

@@ -19,7 +19,7 @@ UID:${evt.id}@ayomaff.com
 DTSTAMP:${startDate}
 DTSTART:${startDate}
 DTEND:${endDate}
-SUMMARY:${evt.title} - Ayo Maff Live
+SUMMARY:${evt.title}: Ayo Maff Live
 LOCATION:${evt.venue}, ${evt.city}, ${evt.country}
 DESCRIPTION:Official live concert performance by Ayo Maff. Tickets: ${evt.ticketUrl}
 STATUS:CONFIRMED

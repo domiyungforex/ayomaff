@@ -13,7 +13,7 @@ import { ARTIST_INFO } from "@/lib/data/artist-data";
 export const metadata: Metadata = {
   metadataBase: new URL('https://ayomaff.com'),
   title: {
-    default: `${ARTIST_INFO.name} — ${ARTIST_INFO.title} | Digital Music Experience`,
+    default: `${ARTIST_INFO.name}: ${ARTIST_INFO.title} | Digital Music Experience`,
     template: `%s | ${ARTIST_INFO.name}`,
   },
   description: ARTIST_INFO.shortBio,
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Ayo Maff Concept Studio" }],
   openGraph: {
-    title: `${ARTIST_INFO.name} — ${ARTIST_INFO.title}`,
+    title: `${ARTIST_INFO.name}: ${ARTIST_INFO.title}`,
     description: ARTIST_INFO.tagline,
     url: "https://ayomaff.com",
     siteName: "Ayo Maff Official Concept Experience",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
         url: "/assets/artist/hero_green_jacket_balcony.webp",
         width: 682,
         height: 1024,
-        alt: "Ayo Maff — Prince of the Street",
+        alt: "Ayo Maff: Prince of the Street",
       },
     ],
     locale: "en_NG",
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${ARTIST_INFO.name} — ${ARTIST_INFO.title}`,
+    title: `${ARTIST_INFO.name}: ${ARTIST_INFO.title}`,
     description: ARTIST_INFO.tagline,
     images: ["/assets/artist/hero_green_jacket_balcony.webp"],
   },

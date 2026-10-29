@@ -27,7 +27,7 @@ export default function AdminDashboardPage() {
       name: "Afro Nation Festival",
       type: "Festival Headline",
       date: "2026-11-20",
-      budget: "$50,000 - $100,000",
+      budget: "$50,000 to $100,000",
       status: "pending",
     },
     {
@@ -43,7 +43,7 @@ export default function AdminDashboardPage() {
       name: "Livespot Entertainment",
       type: "Concert Arena",
       date: "2026-12-18",
-      budget: "$25,000 - $50,000",
+      budget: "$25,000 to $50,000",
       status: "confirmed",
     },
   ];

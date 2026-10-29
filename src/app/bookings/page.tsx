@@ -12,7 +12,7 @@ export default function BookingsPage() {
     eventType: "Festival Headline",
     proposedDate: "",
     location: "",
-    budgetRange: "$25,000 - $50,000",
+    budgetRange: "$25,000 to $50,000",
     message: "",
   });
   const [loading, setLoading] = useState(false);
@@ -181,9 +181,9 @@ export default function BookingsPage() {
                   onChange={(e) => setFormData({ ...formData, budgetRange: e.target.value })}
                   className="w-full px-4 py-2.5 rounded-xl bg-forest-surface border border-emerald-950 text-xs text-white focus:outline-none focus:border-electric-green"
                 >
-                  <option>$15,000 - $25,000</option>
-                  <option>$25,000 - $50,000</option>
-                  <option>$50,000 - $100,000</option>
+                  <option>$15,000 to $25,000</option>
+                  <option>$25,000 to $50,000</option>
+                  <option>$50,000 to $100,000</option>
                   <option>$100,000+</option>
                 </select>
               </div>
