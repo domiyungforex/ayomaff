@@ -1,4 +1,4 @@
-# AYO MAFF — Cinematic Artist Digital Experience
+# AYO MAFF: Cinematic Artist Digital Experience
 
 [![Next.js](https://img.shields.io/badge/Next.js-15.1-black?style=flat&logo=next.js)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.7-blue?style=flat&logo=typescript)](https://www.typescriptlang.org/)
