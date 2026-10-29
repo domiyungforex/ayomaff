@@ -66,6 +66,11 @@ export function HomeBottomSection() {
                       <span className="font-bold text-white truncate">
                         {evt.city}, {evt.country.slice(0, 2).toUpperCase()}
                       </span>
+                      {evt.title.includes("Campus Takeover") && (
+                        <span className="px-1.5 py-0.2 rounded bg-electric-green/20 border border-electric-green/40 text-electric-green text-[9px] font-extrabold uppercase tracking-wider">
+                          Campus
+                        </span>
+                      )}
                     </div>
                     <p className="text-[11px] text-zinc-400 truncate mt-0.5">
                       {evt.venue}

@@ -53,6 +53,44 @@ END:VCALENDAR`;
         </p>
       </div>
 
+      {/* Breaking Tour Announcement: Campus Takeover */}
+      <div className="relative glass-panel rounded-3xl p-6 sm:p-8 border border-electric-green/40 bg-gradient-to-br from-[#07140C] via-[#050806] to-[#07140C] shadow-neon mb-12 overflow-hidden">
+        <div className="absolute top-0 right-0 w-80 h-80 bg-electric-green/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 relative z-10">
+          <div className="max-w-2xl">
+            <div className="flex items-center space-x-2 mb-3">
+              <span className="px-3 py-1 rounded-full bg-electric-green/20 border border-electric-green text-electric-green text-[10px] font-extrabold uppercase tracking-widest">
+                🔥 CAMPUS TAKEOVER 2026
+              </span>
+              <span className="text-zinc-500 text-xs">•</span>
+              <span className="text-zinc-400 text-xs font-mono">Official Announcement</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mb-2 font-display">
+              Sanlam Allianz Campus Takeover: Ile-Ife, Ibadan &amp; Abeokuta
+            </h2>
+            <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed italic mb-4">
+              &ldquo;Ile-Ife, Ibadan &amp; Abeokuta, I’m bringing the energy to your cities! Sanlam Allianz Campus Takeover is turning up the heat! We’re taking over your campuses for an unforgettable experience!&rdquo;
+            </p>
+            <div className="flex flex-wrap items-center gap-2 text-[11px] font-mono text-zinc-400">
+              <span className="text-electric-green font-bold">@AyoMaff</span>
+              <span>•</span>
+              <span>Ticketing: TourStack by Ckrowd</span>
+              <span>•</span>
+              <span>Supported by Sanlam Allianz NG</span>
+            </div>
+          </div>
+
+          <a
+            href="https://tourstack.ckrowd.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-shrink-0 px-6 py-3.5 rounded-full bg-electric-green text-black font-extrabold text-xs uppercase tracking-wider hover:bg-acid-green shadow-neon transition-all"
+          >
+            GET CAMPUS TICKETS 🎟️
+          </a>
+        </div>
+      </div>
+
       {/* Tour Itinerary List */}
       <div className="glass-panel rounded-3xl p-6 sm:p-8 border border-emerald-950/80 mb-16 shadow-2xl">
         <div className="divide-y divide-zinc-900">
