@@ -6,9 +6,16 @@ import Link from "next/link";
 import { ArrowRight, Play, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { VIDEOS } from "@/lib/data/artist-data";
 import { Video } from "@/types";
+import { useAudio } from "@/lib/audio/AudioContext";
 
 export function VideosSection() {
   const [activeVideo, setActiveVideo] = useState<Video | null>(null);
+  const { pause } = useAudio();
+
+  const handleOpenVideo = (video: Video) => {
+    pause();
+    setActiveVideo(video);
+  };
 
   return (
     <section className="relative py-24 bg-[#050806] border-t border-emerald-950/40 overflow-hidden">
@@ -40,7 +47,7 @@ export function VideosSection() {
           {VIDEOS.slice(0, 5).map((video) => (
             <div
               key={video.id}
-              onClick={() => setActiveVideo(video)}
+              onClick={() => handleOpenVideo(video)}
               className="group cursor-pointer glass-panel p-2.5 rounded-2xl border border-emerald-950/80 hover:border-electric-green/60 transition-all duration-300"
             >
               {/* Video Thumbnail */}

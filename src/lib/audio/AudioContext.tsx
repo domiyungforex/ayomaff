@@ -92,6 +92,10 @@ export function AudioEngineProvider({ children }: { children: React.ReactNode })
   // Handle Play/Pause
   const playTrack = useCallback((track: Track) => {
     initAudioEngine();
+    if (audioContextRef.current && audioContextRef.current.state === "suspended") {
+      audioContextRef.current.resume().catch(() => {});
+    }
+
     setCurrentTrack(track);
     setDuration(track.durationSeconds);
     setCurrentTime(0);
@@ -100,12 +104,12 @@ export function AudioEngineProvider({ children }: { children: React.ReactNode })
     if (audioElementRef.current) {
       if (track.audioPreviewUrl) {
         audioElementRef.current.src = track.audioPreviewUrl;
-        audioElementRef.current.play().catch(() => {
-          // Fall back gracefully to synthetic player simulation
+        audioElementRef.current.currentTime = 0;
+        audioElementRef.current.play().catch((err) => {
+          console.warn("Audio playback notice:", err);
           setIsPlaying(true);
         });
       } else {
-        // Simulated playback for demo preview
         setIsPlaying(true);
       }
     }
@@ -113,21 +117,35 @@ export function AudioEngineProvider({ children }: { children: React.ReactNode })
 
   const togglePlay = useCallback(() => {
     initAudioEngine();
+    if (audioContextRef.current && audioContextRef.current.state === "suspended") {
+      audioContextRef.current.resume().catch(() => {});
+    }
+
     if (!currentTrack && playlist.length > 0) {
       playTrack(playlist[0]);
       return;
     }
+
+    if (!currentTrack) return;
 
     if (isPlaying) {
       setIsPlaying(false);
       audioElementRef.current?.pause();
     } else {
       setIsPlaying(true);
-      if (audioElementRef.current && currentTrack?.audioPreviewUrl) {
-        audioElementRef.current.play().catch(() => {});
+      if (audioElementRef.current && currentTrack.audioPreviewUrl) {
+        const audio = audioElementRef.current;
+        const currentSrc = audio.src || "";
+        if (!currentSrc || !currentSrc.includes(currentTrack.audioPreviewUrl)) {
+          audio.src = currentTrack.audioPreviewUrl;
+          audio.currentTime = currentTime;
+        }
+        audio.play().catch((err) => {
+          console.warn("Playback resumed:", err);
+        });
       }
     }
-  }, [currentTrack, initAudioEngine, isPlaying, playlist, playTrack]);
+  }, [currentTrack, currentTime, initAudioEngine, isPlaying, playlist, playTrack]);
 
   const pause = useCallback(() => {
     setIsPlaying(false);
@@ -325,6 +343,7 @@ export function AudioEngineProvider({ children }: { children: React.ReactNode })
     >
       <audio
         ref={audioElementRef}
+        crossOrigin="anonymous"
         preload="metadata"
         onEnded={nextTrack}
         onTimeUpdate={() => {

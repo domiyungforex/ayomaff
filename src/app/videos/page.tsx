@@ -6,10 +6,17 @@ import Link from "next/link";
 import { Play, Film, X } from "lucide-react";
 import { VIDEOS } from "@/lib/data/artist-data";
 import { Video } from "@/types";
+import { useAudio } from "@/lib/audio/AudioContext";
 
 export default function VideosPage() {
   const [filter, setFilter] = useState<string>("all");
   const [activeVideo, setActiveVideo] = useState<Video | null>(null);
+  const { pause } = useAudio();
+
+  const handleOpenVideo = (video: Video) => {
+    pause();
+    setActiveVideo(video);
+  };
 
   const filteredVideos = VIDEOS.filter(
     (v) => filter === "all" || v.category === filter
@@ -90,7 +97,7 @@ export default function VideosPage() {
         {filteredVideos.map((video) => (
           <div
             key={video.id}
-            onClick={() => setActiveVideo(video)}
+            onClick={() => handleOpenVideo(video)}
             className="group cursor-pointer glass-panel p-3 rounded-2xl border border-emerald-950/80 hover:border-electric-green/60 transition-all duration-300"
           >
             <div className="relative aspect-video rounded-xl overflow-hidden mb-3 bg-black">
